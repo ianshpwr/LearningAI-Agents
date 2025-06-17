@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import google.generativeai as genai
 from groq import Groq
 from pypdf import PdfReader
+import streamlit as st
 import gradio as gr
 
 
