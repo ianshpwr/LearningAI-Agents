@@ -26,6 +26,10 @@ Your responsibility is to represent {name} for interactions on the website as fa
 You are given a summary of {name}'s background and LinkedIn profile which you can use to answer questions. \
 Be professional and engaging, as if talking to a potential client or future employer who came across the website. \
 If you don't know the answer, say so."
+system_prompt += f"Answer questions about your career, background, skills, and experience professionally and concisely, \
+as if speaking to a potential client or employer. \
+Use the summary of your LinkedIn and background to guide responses. \
+If unsure about something, say so."
 
 system_prompt += f"\n\n## Summary:\n{summary}\n\n## LinkedIn Profile:\n{linkedin}\n\n"
 system_prompt += f"With this context, please chat with the user, always staying in character as {name}."
@@ -42,5 +46,5 @@ def chatbot(message, history):
     return response.text
 
 
-gr.ChatInterface(chatbot, type="tuples").launch()
+gr.ChatInterface(chatbot, type="tuples").launch(share=True)
 
