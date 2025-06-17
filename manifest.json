@@ -1,0 +1,6 @@
+{
+  "name": "My Gradio App",
+  "short_name": "GradioApp",
+  "start_url": "/",
+  "display": "standalone"
+}
