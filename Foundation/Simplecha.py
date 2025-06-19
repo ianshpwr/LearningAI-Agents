@@ -10,3 +10,13 @@ if gemini_api_key and grok_api_ley:
 else:
     print("gemini or grok API Key not set - please head to the troubleshooting guide in the setup folder")
     
+
+import google.generativeai as genai
+model = genai.GenerativeModel('gemini-1.5-flash')
+
+
+messages = [{"role": "user", "content": "who are you"}]
+
+user_content = messages[0]["content"]
+response = model.generate_content(user_content)
+print(response.text)
