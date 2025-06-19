@@ -20,3 +20,10 @@ messages = [{"role": "user", "content": "who are you"}]
 user_content = messages[0]["content"]
 response = model.generate_content(user_content)
 print(response.text)
+
+question = "Please propose a hard, challenging question to assess someone's IQ. Respond only with the question."
+messages = [{"role": "user", "content": question}]
+
+response  = model.generate_content(question)
+question = response.text
+print(question)
