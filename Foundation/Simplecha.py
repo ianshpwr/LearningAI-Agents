@@ -14,16 +14,16 @@ else:
 import google.generativeai as genai
 model = genai.GenerativeModel('gemini-1.5-flash')
 
-
-messages = [{"role": "user", "content": "who are you"}]
-
-user_content = messages[0]["content"]
-response = model.generate_content(user_content)
-print(response.text)
-
 question = "Please propose a hard, challenging question to assess someone's IQ. Respond only with the question."
 messages = [{"role": "user", "content": question}]
 
 response  = model.generate_content(question)
 question = response.text
-print(question)
+
+
+
+messages = [{"role": "user", "content": question}]
+
+response = model.generate_content(contents=messages[0]["content"])
+answer = response.text
+print(answer)
